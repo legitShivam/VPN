@@ -102,7 +102,7 @@ def call_api(action, server, userid=None, username=None):
 
 
 def adduser(server, username):
-        """Takes a server ID and add a new user key on the server. Print(s a pretty record of the new key for ease of sharing.""")
+        """Takes a server ID and add a new user key on the server. Print(s a pretty record of the new key for ease of sharing."""
         result = call_api('adduser', server, username=username)
 
         data = json.loads(result.text)
@@ -122,7 +122,7 @@ def listusers(server):
 
 def prettyrecord(accesskey):
         """Takes a JSON format access key record and print(s a pretty version.)
-        Plays nice and listens to the -i switch to either print( a one-click access link or not.""")
+        Plays nice and listens to the -i switch to either print( a one-click access link or not."""
         if arguments.invite:
                 s = "User ID: {0}\n\tName: {1}\n\tAccess URL: {2}\n\tInvite URL: {3}\n"
                 print( s.format(accesskey['id'], accesskey['name'], accesskey['accessUrl'], ACCESS_PREAMBLE + urllib.quote_plus(accesskey["accessUrl"])))
